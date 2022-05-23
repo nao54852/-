@@ -1,0 +1,2875 @@
+@charset "UTF-8";
+/* 共通*************************************************************************************************************** */
+html {
+    scroll-behavior: smooth;
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+/* Noto Sans　標準 */
+@font-face {
+    src: url("../fonts/NotoSansJP-Regular.woff") format("woff");
+    font-family: "Noto Sans JP";
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Noto Sans　medium */
+@font-face {
+    src: url(../fonts/NotoSansJP-Medium.woff) format("woff");
+    font-family: 'Noto Sans JP';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+}
+
+/* Noto Sans　bold */
+@font-face {
+    src: url(../fonts/NotoSansJP-Bold.woff) format("woff");
+    font-family: 'Noto Sans JP';
+    font-style: normal;
+    font-weight: bold;
+    font-display: swap;
+}
+
+/* Noto Serif　標準 */
+@font-face {
+    src: url(../fonts/NotoSerifJP-Regular.woff) format("woff");
+    font-family: 'Noto Serif JP';
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Noto Serif　medium */
+@font-face {
+    src: url(../fonts/NotoSerifJP-Medium.woff) format("woff");
+    font-family: 'Noto Serif JP';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+}
+
+/* Noto Serif　bold */
+@font-face {
+    src: url(../fonts/NotoSerifJP-Bold.woff) format("woff");
+    font-family: 'Noto Serif JP';
+    font-style: normal;
+    font-weight: bold;
+    font-display: swap;
+}
+
+/* header------------------------------------------------------------------------------------------------------------- */
+header {
+    z-index: 1000;
+}
+
+header h1 {
+    margin: 0;
+}
+
+.logo {
+    margin: 8px;
+    float: left;
+}
+
+.logo .res-logo {
+    display: none;
+}
+
+.header-nav ul {
+    float: right;
+    display: flex;
+}
+
+.header-nav ul li {
+    width: 144px;
+    height: 32px;
+    margin-right: 8px;
+    background-color: rgb(62, 142, 126);
+    border-radius: 0 0 8px 8px;
+    transition: all 0.25s;
+}
+
+.header-nav ul li:hover {
+    background-color: rgb(18, 65, 55);
+}
+
+.header-nav ul li a{
+    display: block;
+    color: rgb(255, 255, 255);
+    font-size: 1.4rem;
+    font-weight: normal;
+    text-align: center;
+    line-height: 32px;
+    background: url(../images/arrow3.png) 12px 10px no-repeat;
+    transition: all 0.25s;
+}
+
+.header-nav ul li a:hover {
+    background: url(../images/arrow3-2.png) 12px 10px no-repeat;
+}
+
+.res-top,
+.res-tel {
+    display: none;
+}
+
+header::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/* contents----------------------------------------------------------------------------------------------------------- */
+.contents {
+    display: flex;
+    margin: 0 8px;
+}
+
+/* nav ---------------------------------------------------------------*/
+nav {
+    margin-right: 8px;
+    z-index: 1000;
+}
+
+.side-nav ul li a img {
+    width: 18.2vw;
+    height: 100%;
+    margin-bottom: 8px;
+    transition: all 0.25s;
+}
+
+.side-nav ul li a img:hover {
+    opacity: 0.5;
+}
+
+.side-nav ul li a {
+    font-size: 0;
+}
+
+/* パンくずリスト------------------------------------------------------------------------------------------------------------- */
+.breadcrumb {
+    margin: 0 0 16px 32px;
+    padding: 0;
+    list-style: none;
+}
+
+.breadcrumb li {
+    display: inline;/*横に並ぶように*/
+    list-style: none;
+    font-size: 1.6rem;
+    font-weight: bold;/*太字*/
+}
+
+.breadcrumb li:after {
+    /* >を表示*/
+    content: '>';
+    padding: 0 0.2em;
+    color: #555;
+}
+
+.breadcrumb li:last-child:after {
+    content: '';
+}
+
+.breadcrumb li a {
+    text-decoration: none;
+    color: gray;
+}
+
+.breadcrumb li:first-child a:before {
+    /*家アイコン*/
+    font-family: "Font Awesome 5 Free";
+    content: '\f015';
+    font-weight: 900;
+    font-size: 1.6rem;
+    color: rgb(250, 166, 20);
+}
+
+.breadcrumb li a:hover {
+    text-decoration: underline;
+}
+
+/* footer------------------------------------------------------------------------------------------------------------- */
+footer {
+    padding-top: 56px;
+}
+
+.go-top {
+    background-color: rgb(62, 142, 126);
+    border-radius: 8px 8px 0 0;
+    width: 144px;
+    height: 32px;
+    margin-left: auto;
+    font-size: 1.6rem;
+    color: #fff;
+    text-align: center;
+    line-height: 32px;
+    transition: all 0.25s;
+}
+
+.go-top a{
+    display: block;
+    width: 144px;
+    height: 32px;
+    padding-left: 16px;
+    background: url(../images/arrow4.png) 8px center no-repeat;
+    transition: all 0.25s;
+}
+
+.go-top:hover {
+    background-color: rgb(18, 65, 55);
+}
+
+.go-top a:hover {
+    background: url(../images/arrow4-2.png) 8px center no-repeat;
+}
+
+.footer-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 24px;
+    background-color: rgb(62, 142, 126);
+}
+
+.footer-logo img {
+    display: block;
+    margin: auto 0;
+    background-color: #fff;
+    outline: 2px solid rgb(159, 194, 187);
+}
+
+.footer-nav {
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+}
+
+.nav-block {
+    width: 33%;
+    padding-right: 8px;
+    padding-left: 8px;
+    font-size: 1.4rem;
+    line-height: 3.2rem;
+    color: #fff;
+    border-left: 1px solid #fff;
+}
+
+.nav-block a {
+    transition: all 0.25s;
+}
+
+.nav-block a:hover {
+    color: rgb(250, 166, 20);
+}
+
+.copyright {
+    padding-bottom: 40px;
+    text-align: center;
+    color: #fff;
+    background-color: rgb(62, 142, 126);
+}
+
+
+
+/* index************************************************************************************************************** */
+/* contents----------------------------------------------------------------------------------------------------------- */
+
+/* main-------------------------------------------------------------- */
+/* main-view */
+main.index {
+    width: 67%;
+}
+.main-view {
+    position: relative;
+}
+
+.main-view img {
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+}
+
+.main-view p {
+    position: absolute;
+    top: 15%;
+    left: 5%;
+    font-size: 3.5rem;
+    font-family: 'Noto Serif JP', serif;
+    letter-spacing: 0.12em;
+    line-height: 1.5em;
+    text-shadow: 0 0 6px #fff;
+}
+/* important */
+.important {
+    width: 100%;
+    max-width: 1000px;
+    height: 33vw;
+    margin-top: 24px;
+    background-color: rgb(242, 250, 248);
+    position: relative;
+    overflow: hidden;
+}
+
+.important h2 {
+    padding-top: 16px;
+    padding-bottom: 8px;
+    text-align: center;
+    font-size: 3.2rem;
+    font-weight: bold;
+    letter-spacing: 0.2rem;
+    color: red;
+}
+
+.important p {
+    font-size: 1.6rem;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+span.tap {
+    display: none;
+}
+
+/* CSSのスライドショー参考：https://crestadesign.org/horizontal-slideshow/ */
+/* important スライドショー */
+.important-slides{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.important-slides .slide {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+}
+
+.important-slides .slide img {
+    width: 52.1vw;
+    height: auto;
+    left: 50%;
+    margin-left: -26vw;
+    position: absolute;
+}
+
+.slideshow-nav a,
+.slideshow-indicator a{
+    overflow: hidden;
+}
+
+.slideshow-nav a:before,
+.slideshow-indicator a:before {
+    content: url(../images/sprites.png);
+    display: inline-block;
+    font-size: 0;
+    line-height: 0;
+}
+
+.slideshow-nav a {
+    position: absolute;
+    top: 50%;
+    width: 72px;
+    height: 72px;
+    margin-top: -36px;
+}
+
+.slideshow-nav a.prev {
+    left: 4px;
+}
+
+.slideshow-nav a.next {
+    right: 4px;
+}
+
+.slideshow-nav a.next:before {
+    margin-left: -76px;
+}
+
+.slideshow-nav a.disabled {
+    display: none;
+}
+
+.slideshow-indicator {
+    bottom: 8px;
+    height: 16px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    text-align: center;
+}
+
+.slideshow-indicator a {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+.slideshow-indicator a.active {
+    cursor: default;
+}
+
+.slideshow-indicator a:before {
+    margin-top: -72px;
+}
+
+.slideshow-indicator a.active:before {
+    margin-top: -72px;
+    margin-left: -16px;
+}
+/* ---------------------------------------------------------------- */
+
+
+.news {
+    padding-top: 32px;
+}
+
+.news h2 {
+    width: 6em;
+    height: 2em;
+    margin-bottom: 16px;
+    text-align: center;
+    line-height: 1.5em;
+    font-size: 2.2rem;
+    letter-spacing: 0.05em;
+    border-top: 4px solid rgb(18, 65, 55);
+    background-color: rgb(215, 238, 233);
+}
+
+.news ul {
+    width: 100%;
+    margin: 0 auto;
+    font-size: 1.8rem;
+}
+
+.news li {
+    padding: 10px 0 10px 200px;
+    border-top: 1px dotted rgb(62, 142, 126);
+    border-bottom: 1px dotted rgb(62, 142, 126);
+    text-indent: -160px;
+}
+
+.news li:first-child {
+    border-top: none;
+}
+
+.news li a{
+    color: rgb(18, 65, 55);
+    transition: all 0.25s;
+}
+
+.news li a:hover {
+    color: rgb(250, 166, 20);
+}
+
+.news time {
+    padding-right: 32px;
+    font-size: 2.0rem;
+    color: rgb(62, 142, 126);
+}
+
+/* aside------------------------------------------------------------- */
+aside {
+    flex-basis: 208px;
+    margin-left: 8px;
+}
+
+.go-form h3 {
+    display: block;
+    width: 100%;
+    font-size: 2.0rem;
+    font-weight: bold;
+    line-height: 3.2rem;
+    letter-spacing: 0.4em;
+    color: #fff;
+    text-align: center;
+    border: rgb(250, 166, 20);
+    background-color: rgb(250, 166, 20);
+}
+
+.go-form img {
+    width: 100%;
+    height: 100%;
+}
+
+a.link-btn {
+    display: block;
+    width: 100%;
+    margin-top: 8px;
+    font-size: 1.6rem;
+    font-family: 'Noto Serif JP', serif;
+    line-height: 2.4rem;
+    color: #fff;
+    text-align: center;
+    background-color: rgb(250, 166, 20);
+    box-shadow: 0 0 8px rgb(95, 69, 25) inset;
+    transition: all 0.25s;
+}
+
+a.link-btn:hover {
+    background-color: rgb(177, 114, 5);
+}
+
+.time {
+    width: 100%;
+    margin-top: 16px;
+    border: 1px solid rgb(62, 142, 126);
+}
+
+.time h2 {
+    padding: 8px 0 8px 4px;
+    font-size: 2.2rem;
+    color: #fff;
+    background: #123837;
+    background-image: linear-gradient(to bottom,  #123837 0%,#3e8e7e 72%,#7db9e8 100%);
+}
+
+.time p {
+    padding: 8px;
+    font-size: 1.6rem;
+}
+
+.time p.closed-day {
+    padding-left: 52px;
+    padding-bottom: 0;
+    background: url(../images/closed-day.png) 4px 14px no-repeat;
+}
+
+.time p.outpatient-time {
+    padding-left: 52px;
+    background: url(../images/outpatient-time.png) 4px 14px no-repeat;
+}
+
+.time p.interview-time {
+    padding-left: 52px;
+    background: url(../images/interview-time.png) 4px center no-repeat;
+}
+
+.ns-adoption img {
+    width: 100%;
+    height: 100%;
+    margin-top: 16px;
+    transition: all 0.25s;
+}
+
+.ns-adoption img:hover {
+    opacity: 0.8;
+}
+
+.res-ns-adoption {
+    display: none;
+}
+
+
+/* introduction******************************************************************************************************* */
+/* side-nav */
+.side-nav ul.introduction-list li:first-child a img {
+    margin-bottom: 0;
+}
+
+.side-nav ul.introduction-list li ul li {
+    width: 18.2vw;;
+    height: 48px;
+    padding-left: 16px;
+    font-size: 1.9em;
+    font-weight: 500;
+    line-height: 48px;
+    border: 2px solid rgb(62, 142, 126);
+    border-top: 0px;
+    transition: all 0.25s;
+}
+
+.side-nav ul.introduction-list li ul li:last-child {
+    margin-bottom: 8px;
+}
+
+.side-nav ul.introduction-list li ul li.select {
+    color: #fff;
+    background-color: rgb(62, 142, 126);
+}
+
+.side-nav ul.introduction-list li ul li:hover {
+    color: #fff;
+    background-color: rgb(62, 142, 126);
+}
+
+.side-nav ul.introduction-list li ul li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    font-size: 1em;
+}
+
+/* main-------------------------------------------------------------- */
+main {
+    width: 100%;
+    background-color: #fff;
+}
+.tab ul{
+    height: 48px;
+    display: flex;
+}
+
+.tab ul li {
+    width: 100%;
+    margin-right: 0.4vw;
+    line-height: 48px;
+    border-top: 2px solid rgb(62, 142, 126);
+    border-right: 2px solid rgb(62, 142, 126);
+    border-left: 1px solid rgb(62, 142, 126);
+    border-radius: 8px 8px 0 0;
+    transition: all 0.25s;
+}
+
+.tab ul li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 0 16px;
+    font-size: 2.0rem;
+    text-align: center;
+    transition: all 0.25s;
+}
+
+.tab ul li.select2 {
+    background-color: rgb(62, 142, 126);
+    font-size: 2.0rem;
+    color: #fff;
+    text-align: center;
+}
+
+.tab ul li:hover,
+.tab ul li:hover{
+    background-color: rgb(62, 142, 126);
+}
+
+.tab ul li a:hover,
+.tab ul li a:hover {
+    color: #fff;
+}
+
+.introduction-wrapper {
+    width: 100%;
+    padding-bottom: 56px;
+    border: 2px solid rgb(62, 142, 126);
+}
+
+.wrapper-title{
+    display: flex;
+}
+
+.wrapper-title h1 {
+    height: 100%;
+    margin: 24px 0 0 24px;
+    padding: 8px 16px;
+    font-size: 2.4rem;
+    color: rgb(18, 65, 55);
+    text-align: center;
+    background-color: rgb(215, 238, 233);
+    border-top: 3px solid rgb(62, 142, 126);
+}
+
+.wrapper-title p {
+    margin:  24px 16px 0 0;
+    padding-left: 16px;
+    font-size: 1.8rem;
+    line-height: 250%;
+}
+
+.philosophy {
+    width: 90%;
+    height: 16vw;
+    margin: 32px auto 32px;
+    background-image: url(../images/philosophy.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.philosophy h2 {
+    position: absolute;
+    top: 15%;
+    left: 5%;
+    font-size: 2.2rem;
+    font-family: 'Noto Serif JP', serif;
+    font-weight: bold;
+    letter-spacing: 0.4em;
+}
+
+.philosophy p {
+    position: absolute;
+    top: 34%;
+    left: 8%;
+    font-size: 1.8rem;
+    font-family: 'Noto Serif JP', serif;
+    letter-spacing: 0.1em;
+    line-height: 2;
+}
+
+.policy {
+    width: 80%;
+    margin: 0 auto;
+    background-color: rgb(215, 238, 233);
+    border-radius: 350px;
+}
+
+.policy h2 {
+    padding: 5% 0 2% 16%;
+    font-size: 2.2rem;
+    font-family: 'Noto Serif JP', serif;
+    font-weight: bold;
+    letter-spacing: 0.4em;
+}
+
+.policy ol {
+    width: 95%;
+    padding-left: 20%;
+    padding-bottom: 5%;
+    font-size: 1.8rem;
+    font-family: 'Noto Serif JP', serif;
+    letter-spacing: 0.1em;
+    line-height: 2;
+    list-style-type: decimal;
+}
+
+.explanation,
+.organization {
+    width: 90%;
+    margin: 56px auto 0;
+}
+
+.explanation h2,
+.organization h2 {
+    width: 100%;
+    margin-top: 40px;
+    padding-left: 40px;
+    font-size: 2.2rem;
+    line-height: 48px;
+    letter-spacing: 0.15em;
+    background-color: rgb(242, 250, 248);
+    border-left: 3px solid rgb(18, 65, 55);
+}
+
+.explanation table,
+.organization table {
+    width: 90%;
+    margin: 24px auto 0;
+}
+
+.explanation th {
+    width: 23%;
+    height: 40px;
+    font-size: 1.8rem;
+    font-weight: normal;
+    color: #fff;
+    text-align: center;
+    line-height: 40px;
+    letter-spacing: 0.2em;
+    background-color: rgb(18, 65, 55);
+}
+
+.explanation td {
+    height: 40px;
+    padding-left: 16px;
+    font-size: 1.8rem;
+    line-height: 40px;
+}
+
+.explanation tr:nth-child(even) {
+    background-color: rgb(242, 250, 248);
+}
+
+.explanation tr:nth-child(odd) {
+    background-color: rgb(223, 243, 238);
+}
+
+.organization th,
+.organization td {
+    width: 50%;
+    font-size: 1.8rem;
+}
+
+.organization th {
+    height: 32px;
+    font-weight: normal;
+    color: #fff;
+    text-align: center;
+    line-height: 32px;
+    background-color: rgb(18, 65, 55);
+}
+
+.organization td {
+    height: 36px;
+    padding-left: 16px;
+    line-height: 36px;
+}
+
+.organization tr:nth-child(even) {
+    background-color: rgb(242, 250, 248);
+}
+
+.organization tr:nth-child(odd) {
+    background-color: rgb(223, 243, 238);
+}
+
+
+
+/* greeting******************************************************************************************************* */
+
+/* main-------------------------------------------------------------- */
+.director-greeting {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.director-greeting h2 {
+    width: 300px;
+    height: 2em;
+    margin-top: 32px;
+    font-size: 2.2rem;
+    text-align: center;
+    line-height: 1.8em;
+    letter-spacing: 0.15em;
+    border: 2px solid rgb(62, 142, 126);
+}
+
+.director-greeting img {
+    float: right;
+    margin-top: 24px;
+    margin-left: 32px;
+}
+
+.box {
+    margin: 24px 0;
+    font-size: 2.0em;
+    font-family: 'Noto Serif JP', serif;
+    line-height: 1.5em;
+}
+
+.box:after {
+    clear: both;
+}
+
+.signature {
+    margin: 40px 0;
+    text-align: right;
+}
+
+
+
+/* facilities******************************************************************************************************* */
+
+/* main-------------------------------------------------------------- */
+.wrapper-title p span {
+    color: rgb(250, 166, 20);
+}
+
+.wrapper-title p br {
+    display: none;
+}
+
+.floor-information {
+    width: 75%;
+    margin: 0 auto;
+}
+
+.floor-information h2{
+    width: 300px;
+    height: 2em;
+    margin-top: 40px;
+    font-size: 2.2rem;
+    text-align: center;
+    line-height: 1.8em;
+    letter-spacing: 0.15em;
+    border: 2px solid rgb(62, 142, 126);
+}
+.floor {
+    margin-top: 32px;
+    font-size: 2.0rem;
+    font-weight: bold;
+    line-height: 1.5em;
+    background-color: rgb(223, 243, 238);
+}
+
+.floor .ac-parent {
+    color:rgb(18, 56, 55);
+    line-height: 48px;
+    letter-spacing: 0.5em;
+    text-align: center;
+    border: 1px solid #fff;
+    transition: all 0.25s;
+}
+
+.floor .ac-parent:hover {
+    color: rgb(250, 166, 20);
+}
+
+
+
+.floor .ac-child {
+    margin-left: 10%;
+    font-size: 1.8rem;
+    font-weight: normal;
+    background-color: rgb(242, 250, 248);
+    display: none;
+}
+
+.floor .ac-child:nth-child(4) {
+    display: block;
+}
+
+.floor .ac-child ul li {
+    padding-left: 16px;
+    text-align: left;
+    line-height: 2em;
+}
+
+/* adoption******************************************************************************************************* */
+
+/* main-------------------------------------------------------------- */
+.wrapper-title2{
+    display: flex;
+}
+
+.wrapper-title2 h1 {
+    height: 100%;
+    margin: 0 0 0 24px;
+    padding: 8px 16px;
+    font-size: 2.4rem;
+    color: rgb(18, 65, 55);
+    text-align: center;
+    background-color: rgb(215, 238, 233);
+    border-top: 3px solid rgb(62, 142, 126);
+}
+
+.wrapper-title2 p {
+    margin:  0 16px 0 0;
+    padding-left: 16px;
+    font-size: 1.8rem;
+    line-height: 250%;
+}
+
+.wrapper-adoption {
+    margin: 24px 0 0 32px;
+}
+
+.wrapper-adoption h2 {
+    width: 90%;
+    margin: 40px 0 0 0;
+    padding-left: 40px;
+    font-size: 2.2rem;
+    line-height: 48px;
+    letter-spacing: 0.15em;
+    background-color: rgb(242, 250, 248);
+    border-left: 3px solid rgb(18, 65, 55);
+}
+
+.wrapper-adoption p {
+    padding: 16px 0 0 8px;
+    font-size: 1.8rem;
+}
+
+.wrapper-adoption ul {
+    padding: 8px 0 0 24px;
+    font-size: 1.8rem;
+}
+
+.wrapper-adoption ul li{
+    padding: 12px 0 0 8px;
+    list-style-image: url(../images/mark1.png);
+    text-decoration: underline;
+    color: rgb(18, 56, 55);
+    transition: all 0.25s;
+}
+
+.wrapper-adoption ul li:hover {
+    color: rgb(250, 166, 20);
+}
+
+/* news caution ******************************************************************************************************* */
+
+/* main-------------------------------------------------------------- */
+.wrapper-news p {
+    width: 90%;
+    margin: 24px 0 0 48px;
+    font-size: 1.8rem;
+    font-family: 'Noto Serif JP', serif;
+    line-height: 2.4rem;
+}
+
+p.close-date1 {
+    padding-top: 16px;
+    font-size: 3.2rem;
+    font-weight: bold;
+    color: rgb(18, 56, 55);
+}
+
+p.close-date2 {
+    padding-bottom: 16px;
+    font-size: 3.2rem;
+    font-weight: bold;
+    color: rgb(250, 166, 20);
+}
+
+.wrapper-news h2 {
+    width: 95%;
+    margin-top: 40px;
+    margin-left: 32px;
+    padding-left: 40px;
+    font-size: 2.2rem;
+    line-height: 48px;
+    letter-spacing: 0.15em;
+    background-color: rgb(242, 250, 248);
+    border-left: 3px solid rgb(18, 65, 55);
+}
+
+.wrapper-news ul {
+    padding: 8px 0 24px 24px;
+    font-size: 1.8rem;
+}
+
+.wrapper-news ul li {
+    margin-left: 48px;
+    padding: 12px 0 0 8px;
+    font-family: 'Noto Serif JP', serif;
+    list-style-image: url(../images/mark1.png);
+}
+
+.wrapper-news span.imp {
+    font-weight: bold;
+    color: rgb(250, 166, 20);
+}
+
+/* form ******************************************************************************************************* */
+
+/* main-------------------------------------------------------------- */
+.contact-form p {
+    width: 90%;
+    margin: 24px 0 0 48px;
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+}
+
+form {
+    width: 80%;
+    margin: 24px auto 0;
+    padding: 16px;
+    background-color: rgb(223, 243, 238);
+    border-radius: 16px;
+}
+
+.contact-form ul {
+    width: 100%;
+}
+
+.contact-form ul li {
+    margin: 24px 0 0 0;
+    font-size: 1.8rem;
+}
+
+form ul li label {
+    display: block;
+    width:35%;
+    height: 32px;
+    margin-right: 10px;
+    line-height: 32px;
+    float: left;
+}
+
+form ul li label span {
+    font-weight: bold;
+    color: rgb(250, 166, 20);
+}
+
+form ul li input,
+form ul li textarea {
+    text-align: left;
+    padding: 0 4px;
+}
+
+br.res-br {
+    display: none;
+}
+
+.contact-form ul li input,
+.contact-form ul li textarea {
+    width: 60%;
+    background-color: #fff;
+    border: 1px solid rgb(18, 65, 55);
+    border-radius: 4px;
+}
+
+.contact-form ul li input {
+    height: 32px;
+}
+
+.contact-form ul li textarea {
+    height: 96px;
+}
+
+
+#submit {
+    display: block;
+    width: 160px;
+    height: 44px;
+    margin: 24px auto 16px;
+    font-size: 2.0rem;
+    color: #fff;
+    text-align: center;
+    letter-spacing: 0.1em;
+    background-color: rgb(250, 166, 20);
+    border: none;
+    box-shadow: 2px 2px 2px rgb(18, 65, 55);
+    transition: all 0.25s;
+}
+
+#submit:hover {
+    background-color: rgb(18, 65, 55);
+    box-shadow: 2px 2px 2px rgb(250, 166, 20);
+}
+
+.tel {
+    width: 90%;
+    margin: 24px 0 0 48px;
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+}
+
+.tel h2 {
+    width: 90%;
+    margin: 40px 0 0 0;
+    padding-left: 40px;
+    font-size: 2.2rem;
+    line-height: 48px;
+    letter-spacing: 0.15em;
+    background-color: rgb(242, 250, 248);
+    border-left: 3px solid rgb(18, 65, 55);
+}
+
+.tel p {
+    margin-top: 34px;
+    font-size: 24px;
+    font-weight: bold;
+    color: rgb(18, 56, 55);
+}
+
+.tel table {
+    margin: 16px;
+}
+
+.tel table tr {
+    height: 32px;
+}
+
+.tel table tr th {
+    width: 6em;
+    font-weight: 500;
+}
+
+.tel table a span {
+    text-decoration: underline;
+}
+
+/* gairai ******************************************************************************************************* */
+
+/* main-------------------------------------------------------------- */
+.wrapper-outpatient h2 {
+    width: 90%;
+    margin: 40px 0 0 32px;
+    padding-left: 40px;
+    font-size: 2.2rem;
+    line-height: 48px;
+    letter-spacing: 0.15em;
+    background-color: rgb(242, 250, 248);
+    border-left: 3px solid rgb(18, 65, 55);
+}
+
+.wrapper-outpatient p {
+    width: 90%;
+    margin: 24px 0 0 48px;
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+}
+
+.wrapper-outpatient p br {
+    display: none;
+}
+
+.wrapper-outpatient h3 {
+    margin: 24px 0 0 48px;
+    padding-left: 32px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: rgb(62, 142, 126);
+    background: url(../images/mark2.png) 0 1px no-repeat;
+}
+
+.wrapper-outpatient p span.imp1 {
+    font-weight: bold;
+    color: rgb(250, 166, 20);
+}
+
+.wrapper-outpatient p.imp2 {
+    font-weight: bold;
+    color: rgb(18, 56, 55);
+}
+
+.outpatient-time p.imp3 {
+    font-size: 2.2rem;
+    color: rgb(250, 166, 20);
+    font-weight: bold;
+}
+
+.outpatient-time p span {
+    padding: 0 4px;
+}
+
+.outpatient-time p a {
+    color: rgb(18, 65, 55);
+    text-decoration: underline;
+    transition: all 0.25s;
+}
+
+.outpatient-time p a:hover {
+    color: rgb(250, 166, 20);
+}
+
+/* volunteer ******************************************************************************************************* */
+
+/* main-------------------------------------------------------------- */
+.wrapper-title3 h1{
+    width: 8em;
+    height: 100%;
+    margin: 0 0 0 24px;
+    padding: 8px 16px;
+    font-size: 2.4rem;
+    color: rgb(18, 65, 55);
+    text-align: center;
+    background-color: rgb(215, 238, 233);
+    border-top: 3px solid rgb(62, 142, 126);
+}
+
+.wrapper-title3 p {
+    width: 95%;
+    margin:  16px 16px 0 32px;
+    font-size: 1.8rem;
+    line-height: 2.5rem;
+}
+
+.wrapper-volunteer h2 {
+    width: 95%;
+    margin: 32px 0 0 32px;
+    padding-left: 40px;
+    font-size: 2.2rem;
+    line-height: 48px;
+    letter-spacing: 0.15em;
+    background-color: rgb(242, 250, 248);
+    border-left: 3px solid rgb(18, 65, 55);
+}
+
+.course,
+.mini-con,
+.event {
+    height: 386px;
+}
+
+.float {
+    width: 90%;
+    margin-top: 24px;
+    margin-left: 16px;
+}
+
+.float p {
+    width: 38%;
+    margin-left: 48px;
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+    float: left;
+}
+
+.float img {
+    width: min(50%, 440px);
+    height: 50%;
+    margin-left: 4%;
+    float: left;
+}
+
+.float::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/* access ******************************************************************************************************* */
+
+/* main-------------------------------------------------------------- */
+.wrapper-access,
+.wrapper-parking {
+    width: 90%;
+    margin-left: 32px;
+}
+
+.wrapper-access h2,
+.wrapper-parking h2,
+.wrapper-parking h2 {
+    width: 100%;
+    margin-top: 40px;
+    padding-left: 40px;
+    font-size: 2.2rem;
+    line-height: 48px;
+    letter-spacing: 0.15em;
+    background-color: rgb(242, 250, 248);
+    border-left: 3px solid rgb(18, 65, 55);
+}
+
+.float {
+    width: 100%;
+    margin: 24px 0;
+}
+
+.wrapper-access .text {
+    width: 50%;
+    float: left;
+}
+
+.wrapper-access h3,
+.wrapper-parking h3 {
+    padding-left: 32px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: rgb(62, 142, 126);
+    background: url(../images/mark2.png) 0 1px no-repeat;
+}
+
+.wrapper-access dl,
+.wrapper-parking p,
+.wrapper-parking dl {
+    margin: 24px 0 16px 24px;
+    font-size: 1.8rem;
+}
+
+.wrapper-access .text dd:last-child {
+    margin-bottom: 40px;
+}
+
+.wrapper-access img {
+    width: 50%;
+    margin-left: 0;
+    float: right;
+}
+
+.wrapper-parking h3 {
+    margin-top: 32px;
+    margin-left: 32px;
+}
+
+.wrapper-access dt,
+.wrapper-parking dt {
+    width:30%;
+    margin-right: 10px;
+    color: rgb(18, 56, 55);
+    line-height: 3.2rem;
+    float: left;
+    display: block;
+}
+
+.wrapper-access dd,
+.wrapper-parking dd {
+    line-height: 3.2rem;
+}
+
+.wrapper-parking dl {
+    width: 50%;
+}
+
+/* diagnosis ******************************************************************************************************* */
+
+/* main-------------------------------------------------------------- */
+.diagnosis-nav {
+    width: 70vw;
+    max-width: 800px;
+    margin: 24px 0 0 32px;
+}
+
+.diagnosis-nav ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.diagnosis-nav ul li{
+    width: 7em;
+    height: 2.3em;
+    font-size: 1.9rem;
+    color: #fff;
+    text-align: center;
+    line-height: 2.3em;
+    background-color: rgb(62, 142, 126);
+    border-radius: 16px;
+}
+
+.diagnosis-nav ul li:hover {
+    background-color: rgb(18, 65, 55);
+}
+
+.diagnosis-nav ul li a {
+    display: block;
+    width: 7em;
+    height: 2.5em;
+    background: 8px 45% url(../images/arrow3.png) no-repeat;
+}
+
+.diagnosis-nav ul li a:hover {
+    background: 8px 45% url(../images/arrow3-2.png) no-repeat;
+}
+
+.department h2 {
+    width: 90%;
+    margin: 40px 0 24px 32px;
+    padding-left: 40px;
+    font-size: 2.2rem;
+    line-height: 48px;
+    letter-spacing: 0.15em;
+    background-color: rgb(242, 250, 248);
+    border-left: 3px solid rgb(18, 65, 55);
+}
+
+.grid {
+    display: grid;
+    width: 90%;
+    margin: 0 0 0 32px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 8px;
+}
+
+.card {
+    margin-top: 16px;
+    height: 450px;
+    background-color: rgb(242, 250, 248);
+}
+
+.card h3 {
+    height: 56px;
+    padding-left: 16px;
+    font-size: 2rem;
+    font-weight: bold;
+    color: rgb(18, 56, 55);
+    line-height: 56px;
+    background-color: rgb(223, 243, 238);
+}
+
+.card img {
+    display: block;
+    margin: 8px auto;
+    box-shadow: 2px 2px 3px rgba(18, 65, 55, 0.5);
+}
+
+.card p.speciality {
+    margin: 16px 8px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: rgba(18, 65, 55, 0.9);
+}
+
+.card p.qualification {
+    margin: 0 8px;
+    font-size: 1.6rem;
+}
+
+.go-top2 p {
+    width: 90%;
+    margin-top: 24px;
+    text-align: right;
+}
+
+.go-top2 p a {
+    color: rgb(62, 142, 126);
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.go-top2 p a:hover {
+    color: rgb(250, 166, 20);
+}
+
+/* nursing-assistant-adoption ******************************************************************************************************* */
+
+/* main-------------------------------------------------------------- */
+.wrapper-guidelines {
+    width: 90%;
+}
+
+.wrapper-guidelines h2 {
+    margin: 40px 0 24px 32px;
+    padding-left: 40px;
+    font-size: 2.2rem;
+    line-height: 48px;
+    letter-spacing: 0.15em;
+    background-color: rgb(242, 250, 248);
+    border-left: 3px solid rgb(18, 65, 55);
+}
+
+.wrapper-guidelines table {
+    width: 75%;
+    margin: 0 auto 32px;
+    font-size: 1.8rem;
+}
+
+.wrapper-guidelines caption {
+    margin: 16px 0;
+    font-size: 2.0rem;
+}
+
+.wrapper-guidelines tr {
+    line-height: 48px;
+}
+
+.wrapper-guidelines tr th {
+    width: 25%;
+    padding: 0 16px;
+    color: rgb(18, 56, 55);
+    text-align: center;
+    letter-spacing: 0.15em;
+    background-color: rgb(223, 243, 238);
+}
+
+.wrapper-guidelines tr td {
+    padding: 12px 8px;
+    line-height: 24px;
+    background-color: rgb(242, 250, 248);
+}
+
+
+/* nurse ******************************************************************************************************* */
+
+/* main-------------------------------------------------------------- */
+.wrapper-pic {
+    width: 90%;
+    height: 20vw;
+    margin: 0 auto;
+    background: url(../images/ns.jpg) no-repeat ;
+    background-size: contain;
+    position: relative;
+}
+
+.wrapper-pic p {
+    font-size: 4.8rem;
+    font-family: 'Noto Serif JP', serif;
+    color: rgb(250, 166, 20);
+    text-shadow: 0 0 4px rgb(250, 166, 20);
+    position: absolute;
+    top: 20%;
+    left: 5%;
+}
+
+.senior {
+    width: 90%;
+    margin-left: 32px;
+}
+
+.senior h2 {
+    margin: 40px 0 24px;
+    padding-left: 40px;
+    font-size: 2.2rem;
+    line-height: 48px;
+    letter-spacing: 0.15em;
+    background-color: rgb(242, 250, 248);
+    border-left: 3px solid rgb(18, 65, 55);
+}
+
+.senior .flex {
+    width: 90%;
+    margin: 0 auto;
+    padding: 32px;
+    background-color: rgb(239, 239, 205);
+    border-radius: 5%;
+    display: flex;
+}
+
+.senior img {
+    margin: auto 0;
+}
+
+.madoka-text {
+    flex: 1;
+    margin: 0 5%;
+    font-family: 'Noto Serif JP', serif;
+}
+
+.madoka-text h3 {
+    margin-bottom: 32px;
+    font-size: 2.0rem;
+    font-weight: bold;
+    line-height: 32px;
+    color: rgb(18, 56, 55);
+    border-bottom: 2px dotted rgb(18, 65, 55);
+}
+
+.madoka-text p {
+    font-size: 1.8rem;
+}
+
+.education {
+    width: 90%;
+    margin-left: 32px;
+    font-size: 1.8rem;
+}
+
+.education h2 {
+    margin: 40px 0 24px;
+    padding-left: 40px;
+    font-size: 2.2rem;
+    line-height: 48px;
+    letter-spacing: 0.15em;
+    background-color: rgb(242, 250, 248);
+    border-left: 3px solid rgb(18, 65, 55);
+}
+
+.education p {
+    margin-bottom: 2.4rem;
+    line-height: 3.2rem;
+}
+
+.education .flex {
+    display: flex;
+    margin-top: 40px;
+}
+
+.education-text {
+    margin: 0 24px;
+}
+
+.education-text h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: rgb(18, 56, 55);
+}
+
+.education img {
+    width: 43vw;
+    height: 100%;
+}
+
+/* nyuin******************************************************************************************************* */
+
+/* main-------------------------------------------------------------- */
+.wrapper-hospitalization {
+    width: 90%;
+    margin: 24px 32px;
+}
+
+.wrapper-hospitalization section {
+    margin-bottom: 56px;
+}
+
+section h2 {
+    margin: 40px 0 24px;
+    padding-left: 40px;
+    font-size: 2.2rem;
+    line-height: 48px;
+    letter-spacing: 0.15em;
+    background-color: rgb(242, 250, 248);
+    border-left: 3px solid rgb(18, 65, 55);
+}
+
+section p,
+section ul,
+section ol {
+    font-size: 1.8rem;
+}
+
+.list {
+    margin: 24px;
+    padding: 24px;
+    background-color: rgb(223, 243, 238);
+    border-radius: 16px;
+}
+
+.list p.imp4 {
+    margin-bottom: 16px;
+    font-weight: bold;
+    color: rgb(18, 56, 55);
+}
+
+.list p {
+    line-height: 3.2rem;
+    margin-bottom: 8px;
+}
+
+.list ul,
+.list ol {
+    margin-bottom: 8px;
+    padding-left: 24px;
+}
+
+.list ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: disc;
+}
+
+.list ul li,
+.list ol li {
+    padding-right: 4.0rem;
+    line-height: 3.2rem;
+}
+
+.list ol {
+    list-style: decimal;
+}
+
+section > ul,
+section > p {
+    margin-left: 32px;
+}
+
+section > ul {
+    margin-left: 40px;
+    line-height: 3.2rem;
+    list-style-image: url(../images/mark1.png
+    );
+    list-style-position: inside;
+}
+
+section > p {
+    margin-top: 24px;
+    line-height: 2.8rem;
+}
+
+section h3 {
+    padding-left: 24px;
+    font-size: 2.0rem;
+    font-weight: bold;
+    color: rgb(18, 56, 55);
+    line-height: 3.2rem;
+    background: url(../images/mark2.png) 0 center no-repeat;
+}
+
+section .room {
+    display: flex;
+}
+
+.room .room-text {
+    padding: 16px 32px 0 24px;
+    line-height: 2.4rem;
+}
+
+.room img {
+    width: 40vw;
+    height: 100%;
+    margin-top: 16px;
+}
+
+.room .room-text ul {
+    margin-bottom: 40px;
+    list-style: url(../images/mark1.png);
+}
+
+.room .room-text ul li {
+    margin-bottom: 16px;
+}
+
+.room .room-text .monetary {
+    font-size: 1.6rem;
+    margin-top: 24px;
+    line-height: 3.2rem;
+}
+
+.room-text p {
+    margin-bottom: 32px;
+}
+
+.room .room-text ul li span {
+    font-weight: bold;
+}
+
+
+/* タブレット------------------------------------------- */
+@media (max-width:960px) {
+    html {
+        font-size: 56.25%;
+    }
+
+    header {
+        width: 100%;
+        height: 64px;
+        position: fixed;
+        top: 0;
+        background-color: #fff;
+    }
+
+
+    header .logo {
+        width: 240px;
+        margin: 8px;
+    }
+
+    header .logo img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .header-nav {
+        display: none;
+    }
+
+    .res-tel {
+        display: block;
+        float: right;
+    }
+
+    .res-tel p {
+        padding-top: 8px;
+        padding-right: 8px;
+        font-size: 2.4rem;
+        font-weight: bold;
+        text-align: right;
+        color: rgb(18, 56, 55);
+        vertical-align: middle;
+    }
+
+    .res-tel a span {
+        display: inline-block;
+        color: rgb(62, 142, 126);
+        text-decoration: underline;
+    }
+
+    .res-top {
+        display: block;
+        width: 160px;
+        height: 48px;
+        margin: 8px 8px 0 0;
+        font-size: 2rem;
+        text-align: center;
+        line-height: 46px;
+        color: #fff;
+        background-color: rgb(250, 166, 20);
+        box-shadow: 2px 2px 4px rgb(95, 69, 25);
+        border-radius: 4px;
+        float: right;
+    }
+
+    .res-top a {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    .contents {
+        margin: 0;
+        flex-direction: column;
+    }
+
+    nav {
+        position: fixed;
+        top: 64px;
+        width: 100%;
+    }
+
+    .side-nav ul {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .side-nav ul li {
+        width: 25%;
+        height: 40px;
+        text-align: center;
+        color: #fff;
+        background-color: rgb(62, 142, 126);
+        border: 1px solid rgb(223, 243, 238);
+    }
+
+    .side-nav ul li a {
+        display: block;
+        height: 100%;
+        line-height: 40px;
+        font-size: 1.8rem;
+    }
+
+    .side-nav img {
+        display: none;
+    }
+
+    footer .go-top {
+        margin-top: 40px;
+    }
+
+    footer .footer-wrapper
+    {
+        display: none;
+    }
+
+    footer {
+        height: 32px;
+        padding: 0;
+    }
+
+    footer .copyright {
+        padding: 8px 0;
+    }
+
+    /* index */
+    aside {
+        order: 1;
+        margin-top: 144px;
+        display: flex;
+    }
+
+    aside .go-form {
+        display: none;
+    }
+
+    aside .time {
+        margin-right: 16px;
+    }
+
+    aside .ns-adoption {
+        display: none;
+    }
+
+    aside .res-ns-adoption {
+        width: 60%;
+        margin: 16px 8px 0 0;
+        display: block;
+        position: relative;
+        background: rgb(223, 243, 238) url(../images/ns-bunner2.png) center bottom no-repeat;
+    }
+
+    aside .res-ns-adoption h2 {
+        padding: 8px 0 0 4px;
+        font-size: 3rem;
+        font-weight: bold;
+        color: rgb(62, 142, 126);
+        text-shadow: 0 0 4px #fff;
+        background-color: rgb(223, 243, 238);
+    }
+
+    aside .res-ns-adoption p {
+        width: 100%;
+        padding-right: 8px;
+        font-size: 1.8rem;
+        text-align: right;
+        position: absolute;
+        bottom: 2px;
+        right: 0;
+        background-color: rgba(255, 255, 255, 0.7);
+    }
+
+    aside .res-ns-adoption p span.res-go-adoption {
+        font-size: 2.8rem;
+        font-weight: bold;
+        color: rgb(250, 166, 20);
+        text-shadow: 0 0 4px rgb(250, 166, 20);
+    }
+
+    aside .res-ns-adoption p span {
+        display: inline-block;
+    }
+
+    aside .res-ns-adoption p span.tap {
+        display: none;
+    }
+
+    main {
+        order: 2;
+    }
+
+    main .main-view {
+        display: none;
+    }
+
+    main.index {
+        width: 100%;
+    }
+
+    main .important {
+        height: 50vw;
+    }
+
+    main .important h2 {
+        font-size: 3.0rem;
+    }
+
+    .important-slides .slide img {
+        width: 80%;
+        left: 36.5%;
+    }
+
+    main .news {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    /* introduction */
+    .side-nav ul li ul {
+        display: none;
+    }
+
+    main .breadcrumb {
+        margin: 170px 0 16px 8px;
+    }
+
+    .tab ul li a {
+        padding: 0 8px;
+    }
+
+    .tab ul li a br.res-br {
+        display: none;
+    }
+
+    .tab,
+    .introduction-wrapper {
+        width: 98%;
+        margin: 0 auto;
+    }
+
+    .wrapper-title {
+        display: block;
+    }
+
+    .wrapper-title h1{
+        width: 250px;
+    }
+
+    .philosophy {
+        height: 21vw;
+    }
+
+    .policy {
+        border-radius: 40px;
+    }
+
+    /* nyuin */
+    section .room {
+        display: block;
+    }
+
+    .room .room-text ul {
+        margin-bottom: 16px;
+    }
+
+    .room-text p {
+        margin-bottom: 16px;
+
+    }
+
+    section .room img {
+        display: block;
+        width: 80%;
+        margin: 0 auto 24px;
+    }
+
+    /* diagnosis */
+    .diagnosis-nav {
+        width: 90%;
+    }
+
+    .diagnosis-nav ul {
+        flex-wrap: wrap;
+    }
+
+    .diagnosis-nav ul li {
+        margin-bottom: 16px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .grid .card {
+        height: 360px;
+    }
+
+    /* access */
+
+    .wrapper-access dt {
+        float: none;
+    }
+
+    .haruki {
+        display: block;
+    }
+
+    .wrapper-access .text {
+        width: 100%;
+        display: flex;
+    }
+
+    .wrapper-access .text .res-flex {
+        width: 50%;
+    }
+
+    /* volunteer */
+    .course,
+    .mini-con,
+    .event {
+        height: auto;
+    }
+
+    .float p {
+        position: static;
+        float: none;
+        width: 85%;
+        margin-left: 40px;
+    }
+
+    .float img {
+        display: block;
+        width: 85%;
+        margin: 16px auto 0;
+        float: none;
+    }
+
+    /* form */
+    form br.res-br {
+        display: block;
+    }
+
+    form ul li label {
+        width: 80%;
+        margin: 0 auto;
+        text-align: left;
+        float: none;
+    }
+
+    .contact-form ul li {
+        margin: 0 0 16px;
+        text-align: center;
+    }
+
+    .contact-form ul li input,
+    .contact-form ul li textarea {
+        width: 80%;
+        margin-top: -20px;
+    }
+
+    /* nurse */
+    .wrapper-pic {
+        width: 90%;
+        margin: 0 auto;
+        background-size: cover;
+    }
+
+    .senior .flex,
+    .education .flex {
+        flex-direction: column;
+    }
+
+    .senior .flex img {
+        margin: 0 auto 24px;
+    }
+
+    .education .flex img {
+        width: 100%;
+    }
+
+    .wrapper-guidelines {
+        width: 100%;
+    }
+
+    /* adoption */
+    main.main-height {
+        height: 90vh;
+    }
+
+    /* nursing-assistant */
+    .wrapper-guidelines table {
+        width: 90%;
+    }
+
+    .wrapper-guidelines table tr th {
+        width: 20%;
+        padding: 0px 4px;
+    }
+
+    .wrapper-guidelines table tr td {
+        padding-top: 13px;
+    }
+
+}
+
+
+/* スマホ------------------------------------------- */
+@media (max-width:590px) {
+    html {
+        font-size: 50%;
+    }
+
+    .logo {
+        margin-left: 4px;
+    }
+
+    .res-tel{
+        width: 38px;
+        height: 64px;
+        font-size: 0;
+        background: url(../images/tel.png) no-repeat center center;
+    }
+
+    .res-tel a {
+        display: block;
+        width: 38px;
+        height: 64px;
+    }
+
+    .res-tel p {
+        font-size: 0;
+    }
+
+    aside .res-ns-adoption p span.click {
+        display: none;
+    }
+
+    aside .res-ns-adoption p span.tap {
+        display: inline-block;
+    }
+
+    .res-top {
+        width: 50px;
+        height: 48px;
+        margin-right: 4px;
+        margin-left: 4px;
+        font-size: 0;
+        background: url(../images/home.png) center center;
+        box-shadow: none;
+    }
+
+    nav {
+        top: auto;
+        bottom: 0;
+    }
+
+    .side-nav ul li {
+        height: 48px;
+    }
+
+    .side-nav ul li a {
+        font-size: 0;
+        height: 100%;
+    }
+
+    .side-nav ul li a.hospital-icon {
+        background: url(../images/hospital-icon.png) center center no-repeat;
+    }
+
+    .side-nav ul li a.nyuin-icon {
+        background: url(../images/nyuin-icon.png) center center no-repeat;
+    }
+
+    .side-nav ul li a.gairai-icon {
+        background: url(../images/gairai-icon.png) center center no-repeat;
+    }
+
+    .side-nav ul li a.diagnosis-icon {
+        background: url(../images/diagnosis-icon.png) center center no-repeat;
+    }
+
+    .side-nav ul li a.adoption-icon {
+        background: url(../images/adoption-icon.png) center center no-repeat;
+    }
+
+    .side-nav ul li a.access-icon {
+        background: url(../images/access-icon.png) center center no-repeat;
+    }
+
+    .side-nav ul li a.volunteer-icon {
+        background: url(../images/volunteer-icon.png) center center no-repeat;
+    }
+
+    .side-nav ul li a.form-icon {
+        background: url(../images/form-icon.png) center center no-repeat;
+    }
+
+    footer {
+        margin-bottom: 126px;
+    }
+
+    footer .copyright p small {
+        font-size: 1.6rem;
+        padding-bottom: 8px;
+    }
+
+    /* index */
+    aside {
+        margin-top: 48px;
+    }
+
+    aside .time {
+        margin-right: 4px;
+    }
+
+    aside .res-ns-adoption {
+        background-image: url(../images/ns-bunner3.png);
+    }
+
+    aside .res-ns-adoption h2{
+        font-size: 2.8rem;
+    }
+
+    main .important {
+        height: 70vw;
+    }
+
+    span.click {
+        display: none;
+    }
+
+    span.tap {
+        display: inline;
+    }
+
+    .important-slides .slide img {
+        width: 100%;
+        left: 0;
+        margin-left: 0;
+    }
+
+    .slideshow-nav a {
+        top: 60%;
+    }
+
+    .news li {
+        text-indent: -132px;
+        padding-left: 132px;
+    }
+
+    .news li time {
+        padding-right: 12px;
+    }
+
+    /* introduction */
+    main .breadcrumb {
+        margin-top: 80px;
+        margin-bottom: 0;
+    }
+
+    .tab ul {
+        width: 98%;
+        height: 64px;
+        margin-top: 16px;
+        justify-content: space-between;
+    }
+
+    .tab ul li {
+        width: 32%;
+        margin-bottom: 8px;
+        line-height: 24px;
+        border: 1px solid rgb(62, 142, 126);
+        border-radius: 16px;
+        box-shadow: 1px 1px 2px #123837;
+    }
+
+    .tab ul li span {
+        display: inline-block;
+    }
+
+    .tab ul li a {
+        padding: 0 4px;
+    }
+
+    .tab ul li a br.res-br {
+        display: block;
+    }
+
+    .tab ul li.intro,
+    .tab ul li.fac {
+        line-height: 54px;
+    }
+
+    .introduction-wrapper {
+        border: none;
+    }
+
+    .wrapper-title h1 {
+        width: 98%;
+        margin: 8px auto 8px;
+    }
+
+    .wrapper-title p {
+        margin: 0;
+        padding-left: 8px;
+        line-height: 1.5;
+    }
+
+    .philosophy {
+        width: 100%;
+        height: 23vw;
+        margin: 40px 0 0;
+        background: url(../images/bg-round40.png) no-repeat left top;
+    }
+
+    .philosophy h2 {
+        top: 10px;
+        left: 16px;
+        text-decoration: underline;
+        text-shadow: 0 0 4px #fff;
+    }
+
+    .philosophy p {
+        top: 48px;
+        left: 24px;
+        text-shadow: 0 0 4px #fff, 0 0 10px #fff;
+    }
+
+    .philosophy p br {
+        display: none;
+    }
+
+    .policy {
+        width: 98%;
+        margin-top: 32px;
+        background-color: #fff;
+        border-radius: 0;
+        background: url(../images/bg-round40.png) no-repeat left top;
+    }
+
+    .policy h2 {
+        padding-top: 10px;
+        padding-left: 16px;
+        text-decoration: underline;
+        text-shadow: 0 0 4px #fff;
+    }
+
+    .policy ol {
+        padding-left: 48px;
+        padding-bottom: 0;
+    }
+
+    .explanation,
+    .organization {
+        width: 98%;
+        margin: auto;
+    }
+
+    .explanation table,
+    .organization table {
+        width: 100%;
+    }
+
+    /* greeting */
+    .introduction-wrapper {
+        padding-bottom: 0;
+    }
+
+    .director-greeting {
+        margin: 32px 0 0;
+        width: 100%;
+    }
+
+    .director-greeting h2 {
+        width: 98%;
+    }
+
+    .director-greeting .box {
+        width: 96%;
+        margin: 16px auto 0;
+    }
+
+    .director-greeting img {
+        float: none;
+        display: block;
+        margin: 16px auto;
+    }
+
+    /* facilities */
+    .wrapper-title p br {
+        display: block;
+    }
+
+    .floor-information {
+        width: 100%;
+    }
+
+    .floor-information h2 {
+        width: 98%;
+        margin-top: 32px;
+    }
+
+    .floor {
+        margin-top: 16px;
+    }
+
+    .floor dd.ac-child {
+        margin-left: 16px;
+    }
+
+   /* nyuin */
+    .wrapper-title2 {
+        flex-direction: column;
+    }
+
+    .wrapper-title2 h1 {
+        width: 98%;
+        margin: 8px auto 8px;
+    }
+
+    .wrapper-hospitalization {
+        width: 98%;
+        margin: 0 auto;
+    }
+
+    .wrapper-hospitalization h2 {
+        margin-top: 32px;
+        padding-left: 24px;
+    }
+
+    .wrapper-hospitalization section {
+        margin-bottom: 32px;
+    }
+
+    .wrapper-hospitalization section > p {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .list {
+        width: 90%;
+        margin: 16px auto 0;
+        padding: 16px;
+    }
+
+    .list ol {
+        padding-left: 16px;
+    }
+
+    .list ol > li {
+        padding: 0;
+    }
+
+    section > ul {
+        width: 90%;
+        margin: 16px auto;
+    }
+
+    section h3 {
+        margin-left: 8px;
+    }
+
+    /* gairai */
+    .wrapper-outpatient {
+        width: 100%;
+    }
+
+    .wrapper-outpatient h2 {
+        width: 98%;
+        margin: 32px auto 24px;
+    }
+
+    .wrapper-outpatient p {
+        width: 90%;
+        margin: 16px auto 0;
+    }
+
+    .wrapper-outpatient p br {
+        display: block;
+    }
+
+    .wrapper-outpatient h3 {
+        margin-left: 8px;
+    }
+
+    /* diagnosis */
+    .diagnosis-nav {
+        width: 95%;
+        margin: 16px auto;
+    }
+
+    .diagnosis-nav ul {
+        justify-content: center;
+    }
+
+    .diagnosis-nav ul li {
+        height: 2.5em;
+        margin: 0 16px 4px 0;
+    }
+
+    .diagnosis-nav ul li a {
+        width: 100%;
+    }
+
+    .department {
+        width: 100%;
+    }
+
+    .department h2 {
+        width: 98%;
+        margin: 24px auto 16px;
+    }
+
+    .grid {
+        margin: 0 auto;
+    }
+
+    .grid .card {
+        height: 400px;
+    }
+
+    /* adoption */
+    .wrapper-adoption {
+        margin-left: 0;
+    }
+
+    .wrapper-adoption h2 {
+        width: 98%;
+        margin: 24px auto 16px;
+    }
+
+    .wrapper-adoption p {
+        margin-left: 16px;
+        padding: 0;
+    }
+
+    .wrapper-adoption ul {
+        margin-left: 16px;
+    }
+
+    /* access */
+    .wrapper-access,
+    .wrapper-parking {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .wrapper-access h2,
+    .wrapper-parking h2 {
+        width: 98%;
+        margin: 24px auto 16px;
+    }
+
+    .wrapper-access .text {
+        float: none;
+        margin-left: 16px;
+    }
+
+    .wrapper-access img {
+        float: none;
+    }
+
+    /* volunteer */
+    .wrapper-title3 {
+        flex-direction: column;
+    }
+
+    .wrapper-title3 h1 {
+        width: 98%;
+        margin: 8px auto 8px;
+    }
+
+    .wrapper-title3 p {
+        margin: 0 auto;
+        width: 98%;
+        padding-left: 8px;
+        line-height: 1.5;
+    }
+
+    .wrapper-volunteer h2 {
+        width: 98%;
+        margin: 24px auto 16px;
+    }
+
+    .wrapper-volunteer .float {
+        margin-top: 0;
+    }
+
+    .wrapper-volunteer p{
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    /* form */
+    .contact-form p {
+        margin-left: 16px;
+    }
+
+    .contact-form form {
+        width: 90%;
+        padding: 8px;
+    }
+
+    .tel {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .tel h2 {
+        width: 98%;
+        margin: 24px auto 16px;
+    }
+
+    .tel p {
+        margin-left: 16px;
+        font-size: 2.4rem;
+    }
+
+    .tel table tr {
+        height: 28px;
+    }
+
+    /* news */
+    .wrapper-title2 p {
+        line-height: 1.5;
+    }
+
+    .wrapper-news p {
+        margin-left: 16px;
+        line-height: 4.0rem;
+    }
+
+    .wrapper-news p span {
+        display: block;
+    }
+
+    /* nursing-assistant */
+    .wrapper-guidelines h2 {
+        width: 98%;
+        margin: 24px auto 16px;
+    }
+
+    .wrapper-guidelines table {
+        width: 98%;
+    }
+
+    .wrapper-guidelines table caption {
+        margin-top: 0;
+    }
+
+    .wrapper-guidelines table tr {
+        line-height: 2.4;
+    }
+
+    .wrapper-guidelines table tr th {
+        padding: 4px;
+    }
+
+    .wrapper-guidelines table tr td {
+        padding: 10px 4px 4px 8px;
+    }
+
+    /* news */
+    .wrapper-news h2 {
+        width: 98%;
+        margin: 24px auto 16px;
+    }
+
+    .wrapper-news p {
+        margin-top: 16px;
+    }
+
+    /* nurse */
+    .wrapper-pic p {
+        font-size: 3.2rem;
+        left: 2%;
+    }
+
+    .senior,
+    .education {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .senior h2,
+    .education h2 {
+        width: 98%;
+        margin: 24px auto 16px;
+    }
+
+    .senior .flex img {
+        width: 50%;
+        height: 50%;
+    }
+
+    .madoka-text {
+        margin: 0;
+    }
+
+    .education p {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .education .flex {
+        margin-top: 24px;
+    }
+
+    .education-text p {
+        margin-bottom: 16px;
+    }
+
+
+}
+
+@media (max-width:470px) {
+    /* index */
+    header .logo {
+        width: auto;
+        margin-top: 16px;
+    }
+
+    header .logo img {
+        width: 184px;
+        height: auto;
+    }
+
+    .res-ns-adoption span {
+        display: inline-block;
+    }
+
+    /* introduction */
+    .tab ul li:nth-child(2),
+    .tab ul li:nth-child(2) a {
+        font-size: 1.6rem;
+    }
+
+    /* access */
+    .wrapper-access .text {
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .wrapper-access .text .res-flex {
+        width: 100%;
+    }
+
+    .wrapper-access .text .res-flex dl {
+        width: 80%;
+    }
+
+    .wrapper-access .text .res-flex dl dt {
+        width: 80%;
+    }
+
+    .wrapper-access .text .res-flex dl dd {
+        width: 80%;
+        margin-left: 16px;
+    }
+
+    .wrapper-parking dl {
+        width: 80%;
+    }
+
+    .wrapper-parking dt {
+        width: 30%;
+    }
+
+    /* caution */
+    .wrapper-news ul {
+        padding-left: 0;
+    }
+
+    .wrapper-news ul li {
+        margin-left: 40px;
+    }
+
+    /* diagnosis */
+    .grid {
+        width: 80%;
+        grid-template-columns: 1fr
+    }
+}
